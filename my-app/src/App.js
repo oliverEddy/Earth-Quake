@@ -8,7 +8,7 @@ function App() {
     const getData = async () => {
       try {
         const result = await fetchData();
-        setData(result.features); // Update this line to extract the features array from the result
+        setData(result.features.slice(0, 30)); // Only take the first 30 items
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -24,7 +24,9 @@ function App() {
           {data.map((quake, index) => (
             <li key={index}>
               <h2>{quake.properties.title}</h2>
+              <p>Time: {new Date(quake.properties.time).toLocaleString()}</p>
               <p>Magnitude: {quake.properties.magnitude}</p>
+              <p>Depth: {quake.properties.depth} km</p>
               <p>Location: {quake.properties.locality}</p>
             </li>
           ))}
