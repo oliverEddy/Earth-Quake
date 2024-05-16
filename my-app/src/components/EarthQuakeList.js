@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../apiService';
+import EarthquakeItem from './EarthQuakeItem';
 
-
-function App() {
+const EarthquakeList = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -21,15 +21,9 @@ function App() {
   return (
     <div className="App">
       {data ? (
-        <ul>
+        <ul className="divide-y divide-gray-200">
           {data.map((quake, index) => (
-            <li key={index}>
-              <h2>{quake.properties.title}</h2>
-              <p>Time: {new Date(quake.properties.time).toLocaleString()}</p>
-              <p>Magnitude: {quake.properties.magnitude}</p>
-              <p>Depth: {quake.properties.depth} km</p>
-              <p>Location: {quake.properties.locality}</p>
-            </li>
+            <EarthquakeItem key={index} quake={quake} />
           ))}
         </ul>
       ) : (
@@ -37,6 +31,6 @@ function App() {
       )}
     </div>
   );
-}
+};
 
-export default App;
+export default EarthquakeList;
