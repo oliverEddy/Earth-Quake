@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../apiService';
 import EarthquakeItem from './EarthQuakeItem';
+import LoadMoreButton from './LoadMoreButton';
 
 const EarthquakeList = () => {
-  const [data, setData] = useState(null);
+  const [earthquakes, setEarthquakes] = useState([]);
+  const [displayedEarthquakes, setDisplayedEarthquakes] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const result = await fetchData();
-        setData(result.features.slice(0, 30)); // Only take the first 30 items
+        setEarthquakes(result.features);
+        setDisplayedEarthquakes(result.features.slice(0, 30)); // Display initial 30 items
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -18,17 +22,22 @@ const EarthquakeList = () => {
     getData();
   }, []);
 
+  const loadMore = () => {
+    const nextIndex = currentIndex + 30;
+    setDisplayedEarthquakes([...displayedEarthquakes, ...earthquakes.slice(nextIndex, nextIndex + 30)]);
+    setCurrentIndex(nextIndex);
+  };
+
+  const hasMore = currentIndex + 30 < earthquakes.length;
+
   return (
-    <div className="App">
-      {data ? (
-        <ul className="divide-y divide-gray-200">
-          {data.map((quake, index) => (
-            <EarthquakeItem key={index} quake={quake} />
-          ))}
-        </ul>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div>
+      <ul>
+        {displayedEarthquakes.map((quake, index) => (
+          <EarthquakeItem key={index} quake={quake} />
+        ))}
+      </ul>
+      <LoadMoreButton onClick={loadMore} hasMore={hasMore} />
     </div>
   );
 };
