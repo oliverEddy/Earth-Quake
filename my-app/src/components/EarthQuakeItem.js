@@ -1,5 +1,6 @@
 import React from 'react';
 import FormattedTitle from './FormattedTitle';
+import FormattedTime from './FormattedTime';
 
 const EarthquakeItem = ({ quake }) => {
   const { locality, magnitude, time, depth } = quake.properties;
@@ -12,12 +13,12 @@ const EarthquakeItem = ({ quake }) => {
         </div>
         <div>
           <p className="text-sm text-gray-500">
-            <span className="font-semibold">Time:</span> {new Date(time).toLocaleString()}
+            <span className="font-semibold">Time:</span> <FormattedTime timeString={time} />
           </p>
         </div>
         <div>
           <p className="text-sm text-gray-500">
-            <span className="font-semibold">Magnitude:</span> {magnitude.toFixed(2)}
+            <span className="font-semibold">Magnitude:</span> {magnitude}
           </p>
         </div>
         <div>
