@@ -1,15 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../apiService';
+import EarthquakeItem from './EarthQuakeItem';
+import LoadMoreButton from './LoadMoreButton';
 
-
-function App() {
-  const [data, setData] = useState(null);
+const EarthquakeList = () => {
+  const [earthquakes, setEarthquakes] = useState([]);
+  const [displayedEarthquakes, setDisplayedEarthquakes] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const getData = async () => {
       try {
         const result = await fetchData();
-        setData(result.features.slice(0, 30)); // Only take the first 30 items
+        setEarthquakes(result.features);
+        setDisplayedEarthquakes(result.features.slice(0, 30)); // Display initial 30 items
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -18,25 +22,24 @@ function App() {
     getData();
   }, []);
 
+  const loadMore = () => {
+    const nextIndex = currentIndex + 30;
+    setDisplayedEarthquakes([...displayedEarthquakes, ...earthquakes.slice(nextIndex, nextIndex + 30)]);
+    setCurrentIndex(nextIndex);
+  };
+
+  const hasMore = currentIndex + 30 < earthquakes.length;
+
   return (
-    <div className="App">
-      {data ? (
-        <ul>
-          {data.map((quake, index) => (
-            <li key={index}>
-              <h2>{quake.properties.title}</h2>
-              <p>Time: {new Date(quake.properties.time).toLocaleString()}</p>
-              <p>Magnitude: {quake.properties.magnitude}</p>
-              <p>Depth: {quake.properties.depth} km</p>
-              <p>Location: {quake.properties.locality}</p>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p>Loading...</p>
-      )}
+    <div>
+      <ul>
+        {displayedEarthquakes.map((quake, index) => (
+          <EarthquakeItem key={index} quake={quake} />
+        ))}
+      </ul>
+      <LoadMoreButton onClick={loadMore} hasMore={hasMore} />
     </div>
   );
-}
+};
 
-export default App;
+export default EarthquakeList;
