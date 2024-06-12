@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import EarthQuakeList from './components/EarthQuakeList';
-import Map from './components/Maps'; // Fixed import (singular Map)
-import { fetchData } from './apiService'; // Updated function name to match apiService.js
+import Map from './components/Map';
+import { fetchData } from './apiService';
 import './App.css';
 
 function App() {
@@ -16,14 +16,16 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    <div className="flex flex-col h-screen">
       <Header />
-      <div className="content">
-        <div className="map-container">
-          <Map earthquakes={earthquakes} />
-        </div>
-        <div className="list-container">
+      <div className="flex flex-1">
+        <div className="w-1/2 overflow-y-auto p-4">
           <EarthQuakeList earthquakes={earthquakes} />
+        </div>
+        <div className="w-1/2 p-4">
+          <div className="sticky top-0 h-full border-2 border-gray-300 rounded-lg shadow-md">
+            <Map earthquakes={earthquakes} />
+          </div>
         </div>
       </div>
     </div>
