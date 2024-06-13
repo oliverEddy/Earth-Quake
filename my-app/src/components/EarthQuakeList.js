@@ -1,6 +1,5 @@
 // src/components/EarthQuakeList.js
 import React, { useEffect, useState } from 'react';
-import { fetchData } from '../apiService';
 import EarthquakeItem from './EarthQuakeItem';
 import LoadMoreButton from './LoadMoreButton';
 
@@ -21,7 +20,7 @@ const EarthQuakeList = ({ earthquakes, onMouseEnter }) => {
   const hasMore = currentIndex + 30 < earthquakes.length;
 
   return (
-    <div>
+    <div className="fixed left-0 top-16 bottom-0 w-1/2 overflow-y-auto p-4">
       <ul>
         {displayedEarthquakes.map((quake, index) => (
           <li

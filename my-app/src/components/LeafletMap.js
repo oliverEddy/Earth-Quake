@@ -19,7 +19,7 @@ L.Icon.Default.mergeOptions({
 
 const LeafletMap = ({ hoveredQuake }) => {
   return (
-    <MapContainer center={[-40.9006, 174.886]} zoom={5} className="h-full w-full">
+    <MapContainer center={[-40.9006, 172.886]} zoom={6} className="h-full w-full">
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution="&copy; OpenStreetMap contributors"

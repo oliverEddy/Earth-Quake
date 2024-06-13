@@ -1,13 +1,12 @@
+// src/components/Header.js
 import React from 'react';
 
-function App() {
+const Header = () => {
   return (
-    <div className="App">
-      <h1 className="text-4xl font-bold text-center text-blue-600 mt-8">
-        NZ Quakes
-      </h1>
+    <div className="bg-blue-500 text-white p-4 fixed w-full z-10 h-16">
+      <h1 className="text-2xl">Earthquake Tracker NZ</h1>
     </div>
   );
-}
+};
 
-export default App;
+export default Header;
