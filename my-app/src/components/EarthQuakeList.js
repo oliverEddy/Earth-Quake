@@ -1,4 +1,3 @@
-// src/components/EarthQuakeList.js
 import React, { useEffect, useState } from 'react';
 import { fetchData } from '../apiService';
 import EarthquakeItem from './EarthQuakeItem';
@@ -53,9 +52,10 @@ const EarthQuakeList = ({ onMouseEnter }) => {
   };
 
   return (
-    <div className="fixed left-0 top-16 bottom-0 w-1/2 overflow-y-auto p-4">
+    <div className="fixed left-0 top-16 bottom-0 w-1/2 overflow-y-auto p-4 bg-background">
+      <h2 className="text-primary text-xl font-semibold mb-4 text-center">Earthquake Data</h2>
       <button 
-        className="mb-4 px-4 py-2 bg-blue-500 text-white rounded"
+        className="mb-4 px-4 py-2 bg-primary text-textLight rounded hover:bg-blue-600"
         onClick={handleButtonClick}
       >
         {dataType === 'latest' ? 'Switch to Significant' : 'Switch to Latest'}
@@ -66,7 +66,7 @@ const EarthQuakeList = ({ onMouseEnter }) => {
           <li
             key={index}
             onMouseEnter={() => onMouseEnter(quake)}
-            className="p-2 border-b border-gray-300 hover:bg-gray-100"
+            className="list-item"
           >
             <EarthquakeItem quake={quake} />
           </li>

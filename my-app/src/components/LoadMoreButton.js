@@ -1,4 +1,3 @@
-// LoadMoreButton.js
 import React from 'react';
 
 const LoadMoreButton = ({ onClick, hasMore }) => {
@@ -6,7 +5,7 @@ const LoadMoreButton = ({ onClick, hasMore }) => {
 
   return (
     <div className="flex justify-center mt-4">
-      <button onClick={onClick} className="p-2 bg-blue-500 text-white rounded">
+      <button onClick={onClick} className="p-2 bg-primary text-textLight rounded hover:bg-blue-600">
         Load More
       </button>
     </div>
