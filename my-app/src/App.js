@@ -30,7 +30,7 @@ function App() {
             onMouseEnter={handleMouseEnter}
           />
         </div>
-        <div className="map-container flex-1 h-full">
+        <div className="map-container flex-1">
           <LeafletMap hoveredQuake={hoveredQuake} />
         </div>
       </div>
