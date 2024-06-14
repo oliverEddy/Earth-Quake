@@ -32,10 +32,12 @@ const SubHeading = ({ setEarthquakes }) => {
     setDataType(nextDataType);
   };
 
+  const title = dataType === 'latest' ? 'Latest Earthquakes' : 'Significant Earthquakes';
+
   return (
     <div className="bg-white text-primary p-4 fixed w-1/2 z-10 h-16 shadow-lg" style={{ top: '4rem' }}>
       <div className="flex items-center justify-center relative h-full">
-        <h2 className="text-primary text-xl font-semibold">Earthquake Data</h2>
+        <h2 className="text-primary text-xl font-semibold">{title}</h2>
         <button 
           className="absolute right-0 px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap"
           onClick={handleButtonClick}

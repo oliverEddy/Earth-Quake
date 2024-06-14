@@ -17,7 +17,7 @@ function App() {
     <div className="app flex flex-col h-screen">
       <Header />
       <SubHeading setEarthquakes={setEarthquakes} />
-      <div className="flex flex-1">
+      <div className="flex flex-1 mt-16"> {/* Adjusted margin top to move map down */}
         <div className="list-container flex-1 overflow-y-auto p-0 shadow-inner">
           <EarthQuakeList 
             earthquakes={earthquakes}
