@@ -20,7 +20,7 @@ const EarthQuakeList = ({ onMouseEnter, earthquakes }) => {
   const hasMore = currentIndex + 30 < earthquakes.length;
 
   return (
-    <div className="fixed left-0 top-16 bottom-0 w-1/2 overflow-y-auto p-4 bg-background">
+    <div className="fixed left-0 top-28 bottom-0 w-1/2 overflow-y-auto p-4 bg-background">
       <ul>
         {displayedEarthquakes.map((quake, index) => (
           <li

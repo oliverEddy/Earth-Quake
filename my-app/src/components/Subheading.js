@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../apiService';
 
-const Subheading = ({ setEarthquakes }) => {
+const SubHeading = ({ setEarthquakes }) => {
   const [dataType, setDataType] = useState('latest');
   const [error, setError] = useState(null);
 
@@ -48,4 +48,4 @@ const Subheading = ({ setEarthquakes }) => {
   );
 };
 
-export default Subheading;
+export default SubHeading;

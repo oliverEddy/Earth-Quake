@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
-import Subheading from './components/Subheading';
+import SubHeading from './components/SubHeading';
 import EarthQuakeList from './components/EarthQuakeList';
 import LeafletMap from './components/LeafletMap';
 import './App.css';
@@ -16,9 +16,9 @@ function App() {
   return (
     <div className="app flex flex-col h-screen">
       <Header />
-      <Subheading setEarthquakes={setEarthquakes} />
+      <SubHeading setEarthquakes={setEarthquakes} />
       <div className="flex flex-1">
-        <div className="list-container flex-1 overflow-y-auto p-5 shadow-inner">
+        <div className="list-container flex-1 overflow-y-auto p-0 shadow-inner">
           <EarthQuakeList 
             earthquakes={earthquakes}
             onMouseEnter={handleMouseEnter}
