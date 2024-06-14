@@ -34,16 +34,17 @@ const SubHeading = ({ setEarthquakes }) => {
 
   return (
     <div className="bg-white text-primary p-4 fixed w-1/2 z-10 h-16 shadow-lg" style={{ top: '4rem' }}>
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-center relative h-full">
+        <h2 className="text-primary text-xl font-semibold">Earthquake Data</h2>
         <button 
-          className="px-4 py-2 bg-primary text-textLight rounded hover:bg-blue-600"
+          className="absolute right-0 px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap"
           onClick={handleButtonClick}
+          style={{ minWidth: '200px', textAlign: 'center' }}  // Adjust width to prevent text shift
         >
           {dataType === 'latest' ? 'Switch to Significant' : 'Switch to Latest'}
         </button>
-        <h2 className="text-primary text-xl font-semibold text-center flex-grow">Earthquake Data</h2>
       </div>
-      {error && <div className="mb-4 p-2 bg-red-500 text-white rounded">{error}</div>}
+      {error && <div className="absolute bottom-0 left-0 mb-4 p-2 bg-red-500 text-white rounded">{error}</div>}
     </div>
   );
 };
