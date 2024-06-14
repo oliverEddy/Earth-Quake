@@ -1,6 +1,7 @@
 // src/App.js
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import Subheading from './components/Subheading';
 import EarthQuakeList from './components/EarthQuakeList';
 import LeafletMap from './components/LeafletMap';
 import { fetchData } from './apiService';
@@ -23,6 +24,7 @@ function App() {
   return (
     <div className="app flex flex-col h-screen">
       <Header />
+      <Subheading />
       <div className="flex flex-1">
         <div className="list-container flex-1 overflow-y-auto p-5 shadow-inner">
           <EarthQuakeList 
