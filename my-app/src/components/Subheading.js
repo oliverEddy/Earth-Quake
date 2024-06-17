@@ -36,18 +36,18 @@ const SubHeading = ({ setEarthquakes }) => {
   const title = dataType === 'latest' ? 'Latest Earthquakes' : 'Significant Earthquakes';
 
   return (
-    <div className="bg-white text-primary p-4 fixed w-1/2 z-10 h-16 shadow-lg" style={{ top: '4rem' }}>
-      <div className="flex items-center justify-between h-full px-4 xl:px-8 xl:justify-center">
-      <h2 
-  className="text-primary text-xl font-semibold truncate" 
-  style={{ minWidth: '218px', textAlign: 'center' }}
->
-  {title}
-</h2>
+    <div className="bg-white text-primary p-4 fixed w-1/2 z-10 shadow-lg h-32 md:h-16" style={{ top: '4rem' }}>
+      <div className="flex flex-col md:flex-row items-center justify-center md:justify-between h-full px-4 xl:px-8">
+        <h2 
+          className="text-primary text-xl font-semibold truncate mb-2 md:mb-0" 
+          style={{ minWidth: '218px', textAlign: 'center' }}
+        >
+          {title}
+        </h2>
         <button 
-          className="ml-4 px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap xl:ml-0 xl:relative xl:left-4"
+          className="px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap md:ml-4" 
           onClick={handleButtonClick}
-         style={{ minWidth: '180px', textAlign: 'center' }}  // Fixed width to prevent resizing
+          style={{ minWidth: '180px', textAlign: 'center' }}  // Fixed width to prevent resizing
         >
           {dataType === 'latest' ? 'Switch to Significant' : 'Switch to Latest'}
         </button>
