@@ -13,6 +13,8 @@ module.exports = {
       },
       screens: {
         'xl': '1340px', // Custom breakpoint at 1340px
+        'md': '980px', // Tablet breakpoint
+        'sm': '700px', // Mobile breakpoint
       },
     },
   },
