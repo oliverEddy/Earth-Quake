@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchData } from '../apiService';
 import '../App.css'; // Ensure this file contains the CSS definitions
 
-const SubHeading = ({ setEarthquakes }) => {
+const SubHeader = ({ setEarthquakes }) => {
   const [dataType, setDataType] = useState('latest');
   const [error, setError] = useState(null);
 
@@ -57,4 +57,4 @@ const SubHeading = ({ setEarthquakes }) => {
   );
 };
 
-export default SubHeading;
+export default SubHeader;
