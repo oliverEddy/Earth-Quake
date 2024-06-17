@@ -4,7 +4,7 @@ const FormattedTime = ({ timeString }) => {
   const formatTime = (timeString) => {
     const date = new Date(timeString);
     const timeOptions = { hour: 'numeric', minute: 'numeric', hour12: true };
-    const dateOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }; // Use 'long' for the month for better readability
     const formattedTime = date.toLocaleTimeString([], timeOptions);
     const formattedDate = date.toLocaleDateString([], dateOptions);
     return `${formattedTime}, ${formattedDate}`;
