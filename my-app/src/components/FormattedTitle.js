@@ -5,7 +5,7 @@ const FormattedTitle = ({ locality, magnitude }) => {
   const formattedMagnitude = magnitude.toFixed(2);
 
   return (
-    <h2 className="text-xl font-bold text-gray-900">
+    <h2 className="text-xl font-bold text-gray-700">
       Magnitude {formattedMagnitude} at {formattedLocality}
     </h2>
   );
