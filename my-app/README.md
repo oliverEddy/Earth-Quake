@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Earth-Quake
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
+**Earth-Quake** is a responsive web application that displays the latest earthquake information in New Zealand. It leverages the GeoNet API to fetch earthquake data and uses OpenStreetMap to visualize the locations of these quakes on an interactive map. Users can see a list of recent earthquakes and view details such as magnitude, time, depth, and location. When a user hovers over a list item, a pin on the map highlights the corresponding earthquake location.
 
-## Available Scripts
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Dependencies](#dependencies)
+- [Configuration](#configuration)
+- [Documentation](#documentation)
 
-In the project directory, you can run:
 
-### `npm start`
+## Installation
+To set up the Earth-Quake application locally, follow these steps:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Clone the repository**:
+    ```sh
+    git clone https://github.com/oliverEddy/Earth-Quake.git
+    cd my-app
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. **Install dependencies**:
+    ```sh
+    npm install
+    ```
 
-### `npm test`
+3. **Run the application**:
+    ```sh
+    npm start
+    ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
+After installation, you can access the application by navigating to `http://localhost:3000` in your web browser. The home page will display a list of the latest earthquakes in New Zealand, along with their details.
 
-### `npm run build`
+### Viewing Earthquake Details
+- **List View**: Shows recent earthquakes with details like magnitude, time, depth, and location.
+- **Map View**: Displays an interactive map with pins for each earthquake. Hover over a list item to highlight the corresponding pin on the map.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
+- **Latest Earthquakes**: Displays the most recent quakes fetched from the GeoNet API.
+- **Significant Earthquakes**: Option to view significant earthquake data.
+- **Interactive Map**: Uses OpenStreetMap to display quake locations with interactive pins.
+- **Responsive Design**: Optimized for various devices and screen sizes.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dependencies
+- **GeoNet API**: For fetching earthquake data.
+- **OpenStreetMap**: For displaying map and pins.
+- **React**: JavaScript library for building user interfaces.
+- **Leaflet**: Open-source JavaScript library for interactive maps.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuration
+No specific configuration is required. Ensure you have a stable internet connection to fetch data from the APIs.
 
-### `npm run eject`
+## Documentation
+For detailed API documentation, refer to:
+- [GeoNet API Documentation](https://api.geonet.org.nz/)
+- [OpenStreetMap Documentation](https://www.openstreetmap.org/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
