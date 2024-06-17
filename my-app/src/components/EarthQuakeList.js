@@ -21,7 +21,7 @@ const EarthQuakeList = ({ onMouseEnter, earthquakes }) => {
   const hasMore = currentIndex + 30 < earthquakes.length;
 
   return (
-    <div className="fixed left-0 top-48 md:top-28 bottom-0 w-1/2 overflow-y-auto p-4 bg-background hide-scrollbar">
+    <div className="fixed left-0 top-48 md:top-28 bottom-0 w-full sm:w-1/2 overflow-y-auto p-4 bg-background hide-scrollbar">
       <ul>
         {displayedEarthquakes.map((quake, index) => (
           <li

@@ -36,7 +36,7 @@ const SubHeading = ({ setEarthquakes }) => {
   const title = dataType === 'latest' ? 'Latest Earthquakes' : 'Significant Earthquakes';
 
   return (
-    <div className="bg-white text-primary p-4 fixed w-1/2 z-10 shadow-lg h-32 md:h-16" style={{ top: '4rem' }}>
+    <div className="bg-white text-primary p-4 fixed w-full sm:w-1/2 z-10 shadow-lg h-32 md:h-16" style={{ top: '4rem' }}>
       <div className="flex flex-col md:flex-row items-center justify-center md:justify-between h-full px-4 xl:px-8">
         <h2 
           className="text-primary text-xl font-semibold truncate mb-4 md:mb-0" 
