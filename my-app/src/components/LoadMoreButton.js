@@ -5,7 +5,7 @@ const LoadMoreButton = ({ onClick, hasMore }) => {
 
   return (
     <div className="flex justify-center mt-4">
-      <button onClick={onClick} className="p-2 bg-primary text-textLight rounded hover:bg-blue-600">
+      <button onClick={onClick} className="p-2 bg-primary text-textLight rounded">
         Load More
       </button>
     </div>

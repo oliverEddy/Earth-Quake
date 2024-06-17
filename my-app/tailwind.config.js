@@ -1,4 +1,3 @@
-// my-app/tailwind.config.js
 module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
   theme: {
@@ -11,6 +10,9 @@ module.exports = {
         textLight: '#f8f0e3', // Light text color
         textGray: '#6c757d', // Soft gray for text
         darkGray: '#4a4a4a', // Darker gray for headings
+      },
+      screens: {
+        'xl': '1340px', // Custom breakpoint at 1340px
       },
     },
   },
