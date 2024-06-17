@@ -11,10 +11,10 @@ module.exports = {
         textGray: '#6c757d', // Soft gray for text
         darkGray: '#4a4a4a', // Darker gray for headings
       },
-      screens: {
-        'xl': '1340px', // Custom breakpoint at 1340px
-        'md': '980px', // Tablet breakpoint
-        'sm': '700px', // Mobile breakpoint
+      screens: {         // Media queries  
+        'xl': '1340px', // Custom 
+        'md': '980px', // Tablet 
+        'sm': '700px', // Mobile 
       },
     },
   },
