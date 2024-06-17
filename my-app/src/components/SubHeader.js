@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { fetchData } from '../apiService';
-import '../App.css'; // Ensure this file contains the CSS definitions
+import '../App.css';
 
 const SubHeader = ({ setEarthquakes }) => {
   const [dataType, setDataType] = useState('latest');
@@ -47,7 +47,7 @@ const SubHeader = ({ setEarthquakes }) => {
         <button 
           className="px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap md:ml-4" 
           onClick={handleButtonClick}
-          style={{ minWidth: '180px', textAlign: 'center' }}  // Fixed width to prevent resizing
+          style={{ minWidth: '180px', textAlign: 'center' }}  
         >
           {dataType === 'latest' ? 'Switch to Significant' : 'Switch to Latest'}
         </button>

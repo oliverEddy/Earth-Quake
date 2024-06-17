@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import EarthquakeItem from './EarthQuakeItem';
 import LoadMoreButton from './LoadMoreButton';
-import '../App.css'; // Importing the CSS file to ensure it is applied
+import '../App.css'; 
 
 const EarthQuakeList = ({ onMouseEnter, earthquakes }) => {
   const [displayedEarthquakes, setDisplayedEarthquakes] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    setDisplayedEarthquakes(earthquakes.slice(0, 30)); // Display initial 30 items
+    setDisplayedEarthquakes(earthquakes.slice(0, 30)); 
     setCurrentIndex(0);
   }, [earthquakes]);
 

@@ -3,7 +3,7 @@ import Header from './components/Header';
 import SubHeader from './components/SubHeader';
 import EarthQuakeList from './components/EarthQuakeList';
 import LeafletMap from './components/LeafletMap';
-import './App.css'; // Importing the CSS file
+import './App.css';
 
 function App() {
   const [earthquakes, setEarthquakes] = useState([]);
