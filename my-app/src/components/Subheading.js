@@ -36,12 +36,12 @@ const SubHeading = ({ setEarthquakes }) => {
 
   return (
     <div className="bg-white text-primary p-4 fixed w-1/2 z-10 h-16 shadow-lg" style={{ top: '4rem' }}>
-      <div className="flex items-center justify-center relative h-full">
-        <h2 className="text-primary text-xl font-semibold">{title}</h2>
+      <div className="flex items-center justify-between h-full px-4 xl:px-8 xl:justify-center">
+        <h2 className="text-primary text-xl font-semibold truncate">{title}</h2>
         <button 
-          className="absolute right-0 px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap"
+          className="ml-4 px-4 py-2 bg-primary text-textLight rounded whitespace-nowrap xl:ml-0 xl:relative xl:left-4"
           onClick={handleButtonClick}
-          style={{ minWidth: '200px', textAlign: 'center' }}  // Adjust width to prevent text shift
+          style={{ maxWidth: '200px', textAlign: 'center' }}  // Ensure button doesn't shrink too much
         >
           {dataType === 'latest' ? 'Switch to Significant' : 'Switch to Latest'}
         </button>
